@@ -109,7 +109,7 @@ class Student {
         if (mark >= 1 && mark <= 5) {
             this.marks[subject].push(mark);
         } else {
-            return `Ошибка, оценка должна быть числом от 1 до 5`;
+            return 'Ошибка, оценка должна быть числом от 1 до 5';
         }
     }
 
@@ -117,7 +117,7 @@ class Student {
         if (this.marks[subject]) {
             return (this.marks[subject].reduce((sum, current) => sum + current, 0)) / this.marks[subject].length;
         }
-        return `Несуществующий предмет`;
+        return 'Несуществующий предмет';
     }
 
     getAverage() {
@@ -130,12 +130,12 @@ class Student {
             }
             return Sum / Count;
         } else {
-            return ('Нет оценок ни по одному предмету');
+            return 'Нет оценок ни по одному предмету';
         }
     }
 
     exclude(string) {
-        if (string === "Исключен за попытку подделать оценки") {
+        if (string === 'Исключен за попытку подделать оценки') {
             for (let student in this) delete this[student];
         }
     }
